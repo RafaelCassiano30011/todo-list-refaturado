@@ -1,6 +1,5 @@
 import Element from "../element/index.js"
 
-
 const Task = {
     build: (task) => {
         const trash = Element({

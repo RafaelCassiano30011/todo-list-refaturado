@@ -39,20 +39,22 @@ body {
     background-color: white;
 }
 
-.button-box {
+.form-box {
     width: 400px;
     display: flex;
-    justify-content: center;
-    height: 40px;
+    justify-content: space-between;
+    height: 100px;
     transform: translateY(-20px);
+    align-items: center;
+    flex-direction: column;
 }
 
-.button-nova-tarefa {
+.button-new-task {
     bottom: 165px;
     width: 200px;
     height: 40px;
     color: white;
-    background-color: rgba(159, 14, 226, 0.452);
+    background-color: #af7eeb;
     border-radius: 15px;
     outline: none;
     border: none;
@@ -89,30 +91,26 @@ body {
     width: 30px;
 }
 
-.tarefas-input- {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .span-checkbox-on {
-    text-decoration: line-through rgba(159, 14, 226, 0.452);
-}
-
-.tarefas-input {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgba(0, 47, 255, 0.281);
-    font-size: 20px;
+    text-decoration: line-through#dae1f4;
 }
 
 .checkbox {
-    width: 11px;
-    height: 11px;
+    width: 7px;
+    height: 7px;
     margin-right: 15px;
-    border: 1px solid #96a1c0;
+    border: 2px solid #96a1c0;
     border-radius: 50%;
 }
 
 .checked {
     background-color: #af7eeb;
+}
+
+.input-create {
+    display: none;
+}
+
+.hide {
+    display: none;
 }

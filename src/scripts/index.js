@@ -1,16 +1,36 @@
 import all from './dados/index.js'
+
 import PrintTaskList from './modules/printTaskList/index.js'
-import Task from './modules/task/index.js'
 
-const $buttonNova = document.querySelector('.button-nova-tarefa')
+const $formBox = document.querySelector('.form-box')
+const $buttonNewTask = document.querySelector('.button-new-task')
+const $inputCreate = document.querySelector('.input-create')
+const allList = all.read()
 
-// // const newTask = Task.build()
-// console.log(newTask)
+PrintTaskList({
+    taskList: allList,
+    parent: '.box-task',
+})
+$formBox.addEventListener('submit', (e) => {
+    e.preventDefault()
+    if ($inputCreate.classList == 'input-create') {
+        $buttonNewTask.textContent = 'Adiconar-Tarefa'
 
-$buttonNova.addEventListener('click', () => {
-    const allList = all.read()
-    PrintTaskList({
-        taskList: allList,
-        parent: '.box-task',
-    })
+        $inputCreate.classList.toggle('input-create')
+        $inputCreate.value = ''
+
+    } else if ($inputCreate.classList == !'input-create') {
+        $buttonNewTask.textContent = '+  Nova tarefa'
+
+        $inputCreate.classList.toggle('input-create')
+        if ($inputCreate.value == '') return
+
+        all.create({ name: $inputCreate.value })
+
+        const allList = all.read()
+        PrintTaskList({
+            taskList: allList,
+            parent: '.box-task',
+        })
+    }
 })
